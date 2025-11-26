@@ -1,5 +1,5 @@
 # Arduino-Dos
-A Linux Operating System for any Arduino Microcontroller board
+A Linux Operating System for Arduino Mega 2560 Microcontroller board
 It features a **Bash-like shell**, a **login system**, simulated files, and a collection of basic commands.
 ## Features
 
