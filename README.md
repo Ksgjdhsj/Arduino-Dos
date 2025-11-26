@@ -7,7 +7,7 @@ It features a **Bash-like shell**, a **login system**, simulated files, and a co
 # How To Compile
 Run These Commands:
 in Linux:
-avr-gcc -mmcu=atmega2560 -DF_CPU=16000000UL -Os -Wall main.c -o arduinoDOS.elf
-avr-objcopy -O ihex -R .eeprom arduinoDOS.elf arduinoDOS.hex
+- avr-gcc -mmcu=atmega2560 -DF_CPU=16000000UL -Os -Wall main.c -o arduinoDOS.elf
+- avr-objcopy -O ihex -R .eeprom arduinoDOS.elf arduinoDOS.hex
 # Supports For:
 Arduino Mega 2560
