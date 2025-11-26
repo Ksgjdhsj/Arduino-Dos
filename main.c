@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>   // Needed for sprintf
 
+#define F_CPU 16000000UL
+
 // ANSI Colors
 #define RESET   "\x1b[0m"
 #define RED     "\x1b[31m"
@@ -71,7 +73,7 @@ void uart_readline(char *buf, int maxlen) {
     }
 }
 
-// DOS Logo & Neofetch
+// DOS Logo
 void print_dos_logo() {
     uart_puts(RED "  ____   ____   _____\r\n" RESET);
     uart_puts(RED " |  _ \\ |  _ \\ | ____|\r\n" RESET);
@@ -80,6 +82,7 @@ void print_dos_logo() {
     uart_puts(CYAN  "|____/ |____/ |_____|\r\n" RESET);
 }
 
+// Neofetch
 void neofetch() {
     char buf[128];
     const char *version = "2.0";
@@ -89,8 +92,10 @@ void neofetch() {
     uart_puts(GREEN "user@avr-dos\r\n" RESET);
     uart_puts(CYAN "------------------\r\n" RESET);
 
-    sprintf(buf, GREEN "OS: " RESET "Arduino DOS %s (Codename: %s)\r\n", version, codename);
+    uart_puts(CYAN "Arduino-DOS\r\n" RESET);
+    sprintf(buf, YELLOW "Version: %s | Codename: %s\r\n", version, codename);
     uart_puts(buf);
+
     uart_puts(GREEN "Host: " RESET "Arduino Mega 2560 Rev3\r\n");
     uart_puts(GREEN "Terminal: " RESET "Serial Terminal\r\n");
     uart_puts(GREEN "CPU: " RESET "ATmega2560 @ 16MHz\r\n");
@@ -99,8 +104,10 @@ void neofetch() {
 // Welcome Message
 void print_welcome() {
     uart_puts("\r\n");
-    uart_puts(CYAN "Welcome To Arduino DOS 2.0 (Codename: Honey Cake)\r\n" RESET);
-    uart_puts(YELLOW "  * Documentation: https://github.com/Ksgjdhsj/Arduino-Dos\r\n" RESET);
+    uart_puts(CYAN "Arduino-DOS\r\n" RESET);
+    uart_puts(YELLOW "Version: 2.0 | Codename: Honey Cake\r\n" RESET);
+    uart_puts("\r\n");
+    uart_puts("  * Documentation: https://github.com/Ksgjdhsj/Arduino-Dos\r\n");
     uart_puts("\r\n");
 }
 
